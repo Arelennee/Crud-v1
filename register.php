@@ -57,7 +57,7 @@ if (isset($_POST['register'])) {
 </head>
 <body>
     <video src="src/video/background.mp4" autoplay muted loop></video>
-    <div class="container bg-dark mt-5 p-4 rounded" id="content">
+    <div class="container bg-dark mt-5 p-4 rounded h-50" id="content">
         <div class="row">
             <div class="col">
                 <h1>Registro de Usuario</h1>
@@ -78,9 +78,7 @@ if (isset($_POST['register'])) {
                         <button type="submit" name="register" class="btn btn-primary mt-3">Registrarse</button>
                     </div>
                 </form>
-            </div>
-            <div class="col">
-                <img src="" alt="">
+                <a href="./index.php" class="fs-3 text-decoration-none">Volver al Login</a>
             </div>
         </div>
     </div>

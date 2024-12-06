@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-12-2024 a las 02:22:02
+-- Tiempo de generación: 06-12-2024 a las 20:14:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -103,6 +103,27 @@ CREATE TABLE `profesores` (
 INSERT INTO `profesores` (`id`, `nom_prof`, `ape_prof`, `espec_prof`, `email_prof`) VALUES
 (1, 'Jorge', 'Luque', 'Informatica', 'luquetucheroka@sexo.com');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `passw` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `username`, `email`, `passw`, `created_at`) VALUES
+(1, 'pepito', 'pepito@gamer.com', '$2y$10$4r7/EIDsHF20jO09JY91fe.tNM2Tw9rt4ND0pDP0VbHhirvSmcJ/6', '2024-12-06 18:57:51');
+
 --
 -- Índices para tablas volcadas
 --
@@ -142,6 +163,14 @@ ALTER TABLE `profesores`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -174,6 +203,12 @@ ALTER TABLE `notas`
 --
 ALTER TABLE `profesores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
